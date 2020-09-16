@@ -26,6 +26,7 @@ function PeopleList(props) {
   return <ul>{listItems}</ul> 
 } 
 
+
 function ContactManager(props) {
   const [contacts, setContacts] = useState(props.data);
   
@@ -37,6 +38,7 @@ function ContactManager(props) {
   );
 } 
 const contacts = ["John Ennis", "Sharon Ennis", "Halle Ennis"];
+
 
 
 ReactDOM.render(
