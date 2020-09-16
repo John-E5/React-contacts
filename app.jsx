@@ -24,11 +24,23 @@ function PeopleList(props) {
   const listItems = arr.map((val, index)=> <li key ={index}>{val}</li>
   );
   return <ul>{listItems}</ul> 
-  
 } 
 
 
+function ContactManager(props) {
+  const [contacts, setContacts] = useState(props.data);
+  
+  return (
+    <div>
+      <AddPersonForm />
+      <PeopleList data={contacts} />
+    </div>
+  );
+} 
+const contacts = ["John Ennis", "Sharon Ennis", "Halle Ennis"];
+
 
 ReactDOM.render(
- 
+  <ContactManager data={contacts} />, 
+  document.getElementById('root')
 );
