@@ -26,18 +26,20 @@ function PeopleList(props) {
   return <ul>{listItems}</ul> 
 } 
 
-const contacts = ["John Ennis", "Sharon Ennis", "Halle Ennis"];
-
-const el = (
-  <div>
-    <AddPersonForm />
-    <PeopleList data={contacts} />
-  </div>
+function ContactManager(props) {
+  const [contacts, setContacts] = useState(props.data);
+  
+  return (
+    <div>
+      <AddPersonForm />
+      <PeopleList data={contacts} />
+    </div>
   );
-
+} 
+const contacts = ["John Ennis", "Sharon Ennis", "Halle Ennis"];
 
 
 ReactDOM.render(
-  el, 
+  <ContactManager data={contacts} />, 
   document.getElementById('root')
 );
